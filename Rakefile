@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/Tho85/capybara-selenium-remote"
   gem.license = "MIT"
   gem.summary = %Q{Connect Capybara to remote Selenium servers}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{Connect Capybara to remote Selenium servers}
   gem.email = "thomas.hollstegge@zweitag.de"
   gem.authors = ["Thomas Hollstegge"]
   # dependencies defined in Gemfile
