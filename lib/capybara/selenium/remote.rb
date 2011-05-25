@@ -13,7 +13,12 @@ module Capybara
           Capybara.app_host    = "http://#{@localhost}:#{@server_port}"
 
           Capybara.register_driver :selenium do |app|
-            Capybara::Selenium::Driver.new(app, {:url => @selenium_url, :browser => :remote}.merge(opts))
+            driver = if defined?(Capybara::Selenium::Driver)
+                       Capybara::Selenium::Driver
+                     else
+                       Capybara::Driver::Selenium
+                     end
+            driver.new(app, {:url => @selenium_url, :browser => :remote}.merge(opts))
           end
         end
 
