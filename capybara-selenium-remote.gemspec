@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{capybara-selenium-remote}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas Hollstegge"]
@@ -20,11 +20,14 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "capybara-selenium-remote.gemspec",
     "lib/capybara-selenium-remote.rb",
+    "lib/capybara/selenium/remote.rb",
     "spec/capybara-selenium-remote_spec.rb",
     "spec/spec_helper.rb"
   ]
