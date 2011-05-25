@@ -1,6 +1,15 @@
 = capybara-selenium-remote
 
-Description goes here.
+== Usage with Cucumber
+
+1. Update your +Gemfile+
+    gem 'capybara-selenium-remote'
+2. Update your +features/support/env.rb+
+    Capybara.default_selector = :css        # whatever
+    Capybara.default_driver   = :selenium   # optional
+    Capybara::Selenium::Remote.use 'selenium.mycompany.com'
+   For Internet Explorer use
+    Capybara::Selenium::Remote.use 'selenium.mycompany.com', :desired_capabilities => :internet_explorer
 
 == Contributing to capybara-selenium-remote
  
