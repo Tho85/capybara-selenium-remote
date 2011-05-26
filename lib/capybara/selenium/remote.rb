@@ -2,12 +2,13 @@ module Capybara
   module Selenium
     module Remote
       class << self
-        attr_accessor :selenium_host, :server_port, :hostname, :opts
+        attr_accessor :selenium_host, :selenium_port, :server_port, :hostname, :opts
         def use(selenium_host, opts={})
           @selenium_host = selenium_host
-          @selenium_url  = "http://#{selenium_host}:4444/wd/hub"
-          @server_port   = opts.delete(:server_port) || 9000
-          @localhost    = opts.delete(:localhost)    || get_localhost
+          @selenium_port = opts.delete(:selenium_port) || 4444
+          @selenium_url  = opts.delete(:url)           || "http://#{@selenium_host}:#{@selenium_port}/wd/hub"
+          @server_port   = opts.delete(:server_port)   || 9000
+          @localhost     = opts.delete(:localhost)     || get_localhost
           @opts          = opts
           Capybara.server_port = @server_port
           Capybara.app_host    = "http://#{@localhost}:#{@server_port}"
